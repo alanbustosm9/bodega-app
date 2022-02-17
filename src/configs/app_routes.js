@@ -4,4 +4,5 @@ export class PublicRoutes {
 
 export class PrivateRoutes {
     static HOME = '/'
+    static NEW_PRODUCTS = '/new-products'
 }
