@@ -6,4 +6,3 @@ ReactDOM.render(
     <Bodega />,
   document.getElementById('root')
 );
-

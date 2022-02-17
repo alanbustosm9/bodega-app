@@ -1,8 +1,12 @@
 import React from 'react'
+import Navbar from '../../components/Navbar';
 
 const Bodega = () => {
   return (
-    <h1>Bodega - App</h1>
+    <div>
+      <Navbar />
+      <h1>Bodega - App</h1>
+    </div>
   )
 }
 
