@@ -42,11 +42,6 @@ const EditProduct = () => {
               </div>
 
               <div className="form-group">
-                <label>Ingreso</label>
-                <input type="date" className="form-control" name="date" />
-              </div>
-
-              <div className="form-group">
                 <label>Descripción</label>
                 <input
                   type="text"

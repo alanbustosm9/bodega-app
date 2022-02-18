@@ -1,5 +1,6 @@
 import React from "react";
 import Product from "../../components/Product";
+import Navbar from "./../../components/Navbar/index";
 
 const Bodega = () => {
   const products = [
@@ -28,6 +29,7 @@ const Bodega = () => {
 
   return (
     <div>
+      <Navbar />
       <h2 className="text-center my-5">Listado de Productos</h2>
 
       <table className="table table-striped">
