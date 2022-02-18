@@ -9,9 +9,9 @@ const AddNewFab = () => {
     dispatch(uiOpenModal());
   };
   return (
-    <div class="d-grid gap-2 col mx-auto">
+    <div className="d-grid gap-2 col mx-auto">
       <button
-        class="btn btn-primary"
+        className="btn btn-primary"
         type="button"
         onClick={handleClickOpenModal}
       >

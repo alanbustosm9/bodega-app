@@ -38,7 +38,7 @@ const ModalProduct = () => {
       className="modal"
       overlayClassName="modal-fondo"
     >
-      <NewProducts />
+      <NewProducts closeModal={closeModal} />
     </Modal>
   );
 };

@@ -6,8 +6,10 @@ export const types = {
 
   uiOpenModal: "[ui] Open Modal",
   uiCloseModal: "[ui] Close Modal",
-  uiError: "[error] Error",
+  uiError: "[ui] Error",
 
-  bodegaNewProduct: "[bodega] Add New product",
-  bodegaDeleteProduct: "[bodega] Delete product",
+  productActive: "[product] Active Product",
+  productNew: "[product] Add New product",
+  productDelete: "[product] Delete product",
+  productUpdate: "[product] update product",
 };

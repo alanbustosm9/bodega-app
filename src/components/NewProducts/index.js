@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import Swal from "sweetalert2";
-import { productAddNew } from "./../../actions/products";
+import { productNew } from "./../../actions/products";
 
 import "./index.css";
 
-const NewProducts = () => {
+const NewProducts = ({ closeModal }) => {
   const dispatch = useDispatch();
 
   const [formValues, setFormValues] = useState({
@@ -50,10 +50,8 @@ const NewProducts = () => {
         "error"
       );
     }
-
-    console.log(formValues);
-    //TODO: HACER GRABACION EN LA BD
-    dispatch(productAddNew(formValues));
+    dispatch(productNew(formValues));
+    closeModal();
   };
 
   return (
