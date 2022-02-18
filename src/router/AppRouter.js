@@ -1,26 +1,23 @@
-import React from 'react'
-import {
-    BrowserRouter as Router,
-    Routes,
-    Route,
-  } from "react-router-dom";
-import { PrivateRoutes, PublicRoutes } from '../configs/app_routes';
-import AuthPage from '../pages/auth';
-import Bodega from '../pages/Bodega';
-import NewProducts from './../pages/NewProducts/index';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { PrivateRoutes, PublicRoutes } from "../configs/app_routes";
+import AuthPage from "../pages/auth";
+import Bodega from "../pages/Bodega";
+import NewProducts from "./../pages/NewProducts/index";
+import EditProduct from "./../pages/EditProduct/index";
 
 const AppRouter = () => {
   return (
-      <Router>
-        <Routes>
-            <Route path={PublicRoutes.AUTH} element={<AuthPage />} />
+    <Router>
+      <Routes>
+        <Route path={PublicRoutes.AUTH} element={<AuthPage />} />
 
-            <Route path={PrivateRoutes.HOME} element={<Bodega />} />
-            <Route path={PrivateRoutes.NEW_PRODUCTS} element={<NewProducts />} />
-        </Routes>
+        <Route path={PrivateRoutes.HOME} element={<Bodega />} />
+        <Route path={PrivateRoutes.NEW_PRODUCTS} element={<NewProducts />} />
+        <Route path={PrivateRoutes.EDIT_PRODUCTS} element={<EditProduct />} />
+      </Routes>
+    </Router>
+  );
+};
 
-      </Router>
-  )
-}
-
-export default AppRouter
+export default AppRouter;

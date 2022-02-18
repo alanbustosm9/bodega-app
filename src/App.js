@@ -1,14 +1,16 @@
-import React from 'react'
-import AppRouter from './router/AppRouter'
-import Navbar from './components/Navbar/index';
+import React from "react";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
+import AppRouter from "./router/AppRouter";
+import Navbar from "./components/Navbar/index";
 
-const App = () => {
+const Bodega = () => {
   return (
-    <div>
-        <Navbar />
-        <AppRouter />
-    </div>
-  )
-}
+    <Provider store={store}>
+      <Navbar />
+      <AppRouter />
+    </Provider>
+  );
+};
 
-export default App
+export default Bodega;
