@@ -14,6 +14,14 @@ export const bodegaReducer = (state = initialState, action) => {
         products: [...state.products, action.payload],
       };
 
+    case types.bodegaDeleteProduct:
+      return {
+        ...state,
+        products: state.products.filter((e) =>
+          e.id === action.payload.id ? action.payload : e
+        ),
+      };
+
     default:
       return state;
   }

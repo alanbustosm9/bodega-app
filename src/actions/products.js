@@ -5,8 +5,7 @@ export const productAddNew = (products) => ({
   payload: products,
 });
 
-export const deleteProduct = (id) => {
-  return async (dispatch) => {
-    //TODO: FALTA ESTO
-  };
-};
+export const deleteProduct = (id) => ({
+  type: types.bodegaDeleteProduct,
+  payload: id,
+});
