@@ -4,6 +4,8 @@ export const types = {
   authLogout: "[auth] Logout",
   authRegister: "[auth] Register",
 
+  uiOpenModal: "[ui] Open Modal",
+  uiCloseModal: "[ui] Close Modal",
   uiError: "[error] Error",
 
   bodegaNewProduct: "[bodega] Add New product",

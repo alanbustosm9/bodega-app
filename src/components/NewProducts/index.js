@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import Swal from "sweetalert2";
 import { productAddNew } from "./../../actions/products";
 
+import "./index.css";
+
 const NewProducts = () => {
   const dispatch = useDispatch();
 
@@ -56,7 +58,7 @@ const NewProducts = () => {
 
   return (
     <div className="row justify-content-center">
-      <div className="col-md-8">
+      <div className="col">
         <div className="card">
           <div className="card-body">
             <h2 className="text-center mb-4 font-weight bold">

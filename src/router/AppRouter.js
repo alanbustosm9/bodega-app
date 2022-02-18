@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch } from "react-router-dom";
 import { PrivateRoutes, PublicRoutes } from "../configs/app_routes";
 import AuthPage from "../pages/auth";
 import Bodega from "../pages/Bodega";
-import NewProducts from "./../pages/NewProducts/index";
 import EditProduct from "./../pages/EditProduct/index";
 import { useDispatch, useSelector } from "react-redux";
 import { PrivateRoute } from "./PrivateRoute";
@@ -38,12 +37,6 @@ const AppRouter = () => {
             exact
             path={PrivateRoutes.HOME}
             component={Bodega}
-            isAuthenticated={!!uid}
-          />
-          <PrivateRoute
-            exact
-            path={PrivateRoutes.NEW_PRODUCTS}
-            component={NewProducts}
             isAuthenticated={!!uid}
           />
           <PrivateRoute

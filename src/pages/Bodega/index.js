@@ -1,6 +1,9 @@
 import React from "react";
 import Product from "../../components/Product";
 import Navbar from "./../../components/Navbar/index";
+import ModalProduct from "./../../components/Modal/index";
+
+import AddNewFab from "./../../components/AddNewFab/index";
 
 const Bodega = () => {
   const products = [
@@ -51,6 +54,9 @@ const Bodega = () => {
               ))}
         </tbody>
       </table>
+      <ModalProduct />
+
+      <AddNewFab />
     </div>
   );
 };

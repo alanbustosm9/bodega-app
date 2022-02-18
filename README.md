@@ -7,7 +7,7 @@
 3. [react-redux](https://react-redux.js.org/introduction/getting-started)
 4. [redux-thunk](https://www.npmjs.com/package/redux-thunk)
 5. [redux](https://es.redux.js.org/)
-6. [axios](https://www.npmjs.com/package/axios)
+6. [react-modal](https://www.npmjs.com/package/react-modal)
 
 ## Developer :smiley: Alan Henry Bustos Mora
 
