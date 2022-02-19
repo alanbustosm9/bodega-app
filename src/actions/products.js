@@ -10,6 +10,7 @@ export const productNew = (products) => {
 
       if (body.ok) {
         dispatch({ type: types.productNew, payload: products });
+        dispatch(productsLoaded());
         Swal.fire("Success", "Producto guardado correctamente", "success");
       }
     } catch (error) {

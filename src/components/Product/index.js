@@ -22,7 +22,6 @@ const Product = ({ product }) => {
     }).then((result) => {
       if (result.value) {
         dispatch(productAskDelete(_id));
-        history.push("/");
       }
     });
   };
@@ -30,14 +29,12 @@ const Product = ({ product }) => {
     dispatch(productToEdit(product));
     history.push(`/edit-products/${product._id}`);
   };
-
   return (
-    <tr key={_id}>
+    <tr>
       <td>{name}</td>
       <td>{quantity}</td>
       <td>${price}</td>
       <td>{description}</td>
-
       <td className="actions">
         <button
           className="btn btn-primary mr-2"
