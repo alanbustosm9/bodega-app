@@ -10,17 +10,17 @@ const AuthPage = () => {
   const dispatch = useDispatch();
 
   const [formLoginValues, handleLoginInputChange] = useForm({
-    lEmail: "alanbustox46@gmail.com",
-    lPassword: "123456",
+    lEmail: "",
+    lPassword: "",
   });
 
   const { lEmail, lPassword } = formLoginValues;
 
   const [formRegisterValues, handleRegisterInputChange] = useForm({
-    rName: "Alan Bustos",
-    rEmail: "alanbustox@gmail.com",
-    rPassword1: "1234567",
-    rPassword2: "1234567",
+    rName: "",
+    rEmail: "",
+    rPassword1: "",
+    rPassword2: "",
   });
 
   const { rName, rEmail, rPassword1, rPassword2 } = formRegisterValues;
