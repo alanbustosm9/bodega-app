@@ -12,7 +12,7 @@ const Product = ({ product }) => {
 
   const dispatch = useDispatch();
 
-  const handleAskDelete = (id) => {
+  const handleAskDelete = (_id) => {
     Swal.fire({
       title: "¿Esta seguro de eliminar?",
       icon: "warning",
@@ -22,7 +22,7 @@ const Product = ({ product }) => {
       confirmButtonText: "Si, eliminar",
     }).then((result) => {
       if (result.value) {
-        dispatch(productAskDelete(id));
+        dispatch(productAskDelete(_id));
         history.push("/");
       }
     });
@@ -33,7 +33,7 @@ const Product = ({ product }) => {
   };
 
   return (
-    <tr key={product._id}>
+    <tr>
       <td>{name}</td>
       <td>{quantity}</td>
       <td>${price}</td>

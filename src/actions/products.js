@@ -9,7 +9,7 @@ export const productNew = (products) => {
       const body = await resp.json();
 
       if (body.ok) {
-        productActive._id = body.product._id;
+        // productActive._id = body.product._id;
         dispatch(productAddNew(products));
         Swal.fire("Success", "Producto guardado correctamente", "success");
       }

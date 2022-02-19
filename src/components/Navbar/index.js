@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { Logout } from "./../../actions/auth";
 
 const Navbar = () => {
@@ -12,6 +13,10 @@ const Navbar = () => {
 
   return (
     <div className="navbar navbar-dark bg-dark mb-4">
+      <Link to={"/"}>
+        <h4>Inicio</h4>
+      </Link>
+
       <span className="navbar-brand">{name}</span>
 
       <button className="btn btn-outline-danger" onClick={handleLogout}>
