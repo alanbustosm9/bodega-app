@@ -1,6 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { productEdited } from "../../actions/products";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const EditProduct = () => {
+  const history = useHistory();
+  const dispatch = useDispatch();
+
+  const [product, setProduct] = useState({
+    name: "",
+    quantity: "",
+    price: "",
+    description: "",
+  });
+
+  const { productEdit } = useSelector((state) => state.product);
+  const { name, quantity, price, description } = product;
+
+  useEffect(() => {
+    setProduct(productEdit);
+  }, [productEdit]);
+
+  const handleInputChange = (e) => {
+    setProduct({
+      ...product,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmitEdit = (e) => {
+    e.preventDefault();
+
+    dispatch(productEdited(product));
+    history.push("/");
+  };
+
   return (
     <div className="row justify-content-center">
       <div className="col-md-8">
@@ -10,7 +45,7 @@ const EditProduct = () => {
               Editar Producto
             </h2>
 
-            <form>
+            <form onSubmit={handleSubmitEdit}>
               <div className="form-group">
                 <label>Nombre Producto</label>
                 <input
@@ -18,6 +53,8 @@ const EditProduct = () => {
                   className="form-control"
                   placeholder="Nombre Producto"
                   name="name"
+                  value={name}
+                  onChange={handleInputChange}
                 />
               </div>
 
@@ -28,6 +65,8 @@ const EditProduct = () => {
                   className="form-control"
                   placeholder="Cantidad"
                   name="quantity"
+                  value={quantity}
+                  onChange={handleInputChange}
                 />
               </div>
 
@@ -38,6 +77,8 @@ const EditProduct = () => {
                   className="form-control"
                   placeholder="Precio"
                   name="price"
+                  value={price}
+                  onChange={handleInputChange}
                 />
               </div>
 
@@ -48,6 +89,8 @@ const EditProduct = () => {
                   className="form-control"
                   placeholder="Descripción"
                   name="description"
+                  value={description}
+                  onChange={handleInputChange}
                 />
               </div>
 

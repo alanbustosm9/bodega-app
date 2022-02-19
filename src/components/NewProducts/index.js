@@ -9,10 +9,10 @@ const NewProducts = ({ closeModal }) => {
   const dispatch = useDispatch();
 
   const [formValues, setFormValues] = useState({
-    name: "Coca Cola",
-    quantity: "20",
-    price: "1000",
-    description: "Bebida coca-cola de 1L",
+    name: "",
+    quantity: "",
+    price: "",
+    description: "",
   });
 
   const { name, quantity, price, description } = formValues;

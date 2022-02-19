@@ -10,7 +10,11 @@ export const types = {
 
   productActive: "[product] Active Product",
   productNew: "[product] Add New product",
-  productDelete: "[product] Delete product",
+  productDelete: "[product] Ask for delete product",
+  productDeleted: "[product] Delete product",
   productUpdate: "[product] Update product",
   productLoaded: "[product] Load products",
+
+  productDataToEdit: "[product] Update product start",
+  productUpdateFinish: "[product] Finish product updated",
 };

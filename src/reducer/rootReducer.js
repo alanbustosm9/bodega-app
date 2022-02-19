@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
-import { bodegaReducer } from "./bodegaReducer";
+import { productReducer } from "./productReducer";
 import { authReducer } from "./authReducer";
 import { uiReducer } from "./uiReducer";
 
 export const rootReducer = combineReducers({
-  bodega: bodegaReducer,
+  product: productReducer,
   auth: authReducer,
   ui: uiReducer,
 });

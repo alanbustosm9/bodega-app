@@ -5,9 +5,11 @@ const initialState = {
   error: null,
   loading: false,
   active: null,
+  productEdit: null,
+  productDelete: null,
 };
 
-export const bodegaReducer = (state = initialState, action) => {
+export const productReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.productActive:
       return {
@@ -30,17 +32,31 @@ export const bodegaReducer = (state = initialState, action) => {
     case types.productUpdate:
       return {
         ...state,
-        products: state.products.map((product) =>
-          product.id === action.payload.id ? action.payload.product : product
-        ),
+        productEdit: action.payload,
       };
+
+    // case types.productUpdateFinish:
+    //   return {
+    //     ...state,
+    //     productEdit: null,
+    //     products: state.products.map((product) =>
+    //       product._id ? (product = action.payload) : product
+    //     ),
+    //   };
 
     case types.productDelete:
       return {
         ...state,
-        products: state.negocio.filter(
-          (product) => product.id !== action.payload
+        productDelete: action.payload,
+      };
+
+    case types.productDeleted:
+      return {
+        ...state,
+        products: state.products.filter(
+          (product) => product.id !== state.productDelete
         ),
+        productDelete: null,
       };
 
     default:

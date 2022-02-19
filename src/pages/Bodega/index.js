@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { productsLoaded } from "../../actions/products";
 
 const Bodega = () => {
-  const { products } = useSelector((state) => state.bodega);
+  const { products } = useSelector((state) => state.product);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const Bodega = () => {
           {products.length === 0
             ? "No hay productos"
             : products.map((product) => (
-                <Product key={product.id} product={product} />
+                <Product key={product._id} product={product} />
               ))}
         </tbody>
       </table>

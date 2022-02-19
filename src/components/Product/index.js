@@ -1,29 +1,54 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { deleteProduct } from "../../actions/products";
+import { productAskDelete } from "../../actions/products";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { productToEdit } from "./../../actions/products";
+import Swal from "sweetalert2";
 
 const Product = ({ product }) => {
-  const { id, name, price, quantity, description } = product;
+  const { _id, name, price, quantity, description } = product;
+
+  const history = useHistory();
 
   const dispatch = useDispatch();
 
-  const handleDelete = () => {
-    dispatch(deleteProduct(id));
+  const handleAskDelete = (id) => {
+    Swal.fire({
+      title: "¿Esta seguro de eliminar?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si, eliminar",
+    }).then((result) => {
+      if (result.value) {
+        dispatch(productAskDelete(id));
+      }
+    });
+  };
+  const redirectToEdit = (product) => {
+    dispatch(productToEdit(product));
+    history.push(`/edit-products/${product._id}`);
   };
 
   return (
-    <tr>
+    <tr key={product._id}>
       <td>{name}</td>
       <td>{quantity}</td>
       <td>$ {price}</td>
       <td>{description}</td>
 
       <td className="actions">
-        <Link to={`/edit-products/${id}`} className="btn btn-primary mr-2">
+        <button
+          className="btn btn-primary mr-2"
+          onClick={() => redirectToEdit(product)}
+        >
           Editar
-        </Link>
-        <button className="btn btn-danger mr-2" onClick={handleDelete}>
+        </button>
+        <button
+          className="btn btn-danger mr-2"
+          onClick={() => handleAskDelete(_id)}
+        >
           Eliminar
         </button>
       </td>
