@@ -35,15 +35,6 @@ export const productReducer = (state = initialState, action) => {
         productEdit: action.payload,
       };
 
-    // case types.productUpdateFinish:
-    //   return {
-    //     ...state,
-    //     productEdit: null,
-    //     products: state.products.map((product) =>
-    //       product._id ? (product = action.payload) : product
-    //     ),
-    //   };
-
     case types.productDelete:
       return {
         ...state,

@@ -23,6 +23,7 @@ const Product = ({ product }) => {
     }).then((result) => {
       if (result.value) {
         dispatch(productAskDelete(id));
+        history.push("/");
       }
     });
   };
@@ -35,7 +36,7 @@ const Product = ({ product }) => {
     <tr key={product._id}>
       <td>{name}</td>
       <td>{quantity}</td>
-      <td>$ {price}</td>
+      <td>${price}</td>
       <td>{description}</td>
 
       <td className="actions">

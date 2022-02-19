@@ -96,7 +96,7 @@ export const productAskDelete = (id) => {
         Swal.fire("Error", body.msg, "error");
       }
     } catch (error) {
-      console.log(error);
+      Swal.fire("Error", "Hable con el administrador", "error");
     }
   };
 };

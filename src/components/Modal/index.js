@@ -31,7 +31,6 @@ const ModalProduct = () => {
   return (
     <Modal
       isOpen={modalOpen}
-      //   onAfterOpen={afterOpenModal}
       onRequestClose={closeModal}
       style={customStyles}
       closeTimeoutMS={200}
