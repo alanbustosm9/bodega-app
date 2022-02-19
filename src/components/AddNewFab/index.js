@@ -9,7 +9,7 @@ const AddNewFab = () => {
     dispatch(uiOpenModal());
   };
   return (
-    <div className="d-grid gap-2 col mx-auto">
+    <div className="d-grid gap-2 col mx-auto mb-5">
       <button
         className="btn btn-primary"
         type="button"

@@ -1,34 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Product from "../../components/Product";
 import Navbar from "./../../components/Navbar/index";
 import ModalProduct from "./../../components/Modal/index";
 
 import AddNewFab from "./../../components/AddNewFab/index";
+import { useDispatch, useSelector } from "react-redux";
+import { productsLoaded } from "../../actions/products";
 
 const Bodega = () => {
-  const products = [
-    {
-      id: 1,
-      name: "Coca cola",
-      quantity: 10,
-      price: 1000,
-      description: "Coca Cola de 1L",
-    },
-    {
-      id: 2,
-      name: "Coca cola",
-      quantity: 10,
-      price: 1000,
-      description: "Coca Cola de 1L",
-    },
-    {
-      id: 3,
-      name: "Coca cola",
-      quantity: 10,
-      price: 1000,
-      description: "Coca Cola de 1L",
-    },
-  ];
+  const { products } = useSelector((state) => state.bodega);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(productsLoaded());
+  }, [dispatch]);
 
   return (
     <div>

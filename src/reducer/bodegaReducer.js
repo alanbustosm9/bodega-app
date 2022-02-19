@@ -21,6 +21,12 @@ export const bodegaReducer = (state = initialState, action) => {
         products: [...state.products, action.payload],
       };
 
+    case types.productLoaded:
+      return {
+        ...state,
+        products: [...action.payload],
+      };
+
     case types.productUpdate:
       return {
         ...state,

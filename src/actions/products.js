@@ -24,6 +24,25 @@ const productAddNew = (products) => ({
   payload: products,
 });
 
+export const productsLoaded = () => {
+  return async (dispatch) => {
+    try {
+      const resp = await fetchWithToken("products");
+      const body = await resp.json();
+
+      const products = body.products;
+      dispatch(productLoading(products));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+const productLoading = (products) => ({
+  type: types.productLoaded,
+  payload: products,
+});
+
 export const productActive = (products) => ({
   type: types.productActive,
   payload: products,
