@@ -8,13 +8,10 @@ export const types = {
   uiCloseModal: "[ui] Close Modal",
   uiError: "[ui] Error",
 
-  productActive: "[product] Active Product",
   productNew: "[product] Add New product",
   productDelete: "[product] Ask for delete product",
   productDeleted: "[product] Delete product",
   productUpdate: "[product] Update product",
   productLoaded: "[product] Load products",
-
   productDataToEdit: "[product] Update product start",
-  productUpdateFinish: "[product] Finish product updated",
 };

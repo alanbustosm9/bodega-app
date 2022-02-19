@@ -7,7 +7,6 @@ import Swal from "sweetalert2";
 
 const Product = ({ product }) => {
   const { _id, name, price, quantity, description } = product;
-
   const history = useHistory();
 
   const dispatch = useDispatch();
@@ -33,7 +32,7 @@ const Product = ({ product }) => {
   };
 
   return (
-    <tr>
+    <tr key={_id}>
       <td>{name}</td>
       <td>{quantity}</td>
       <td>${price}</td>

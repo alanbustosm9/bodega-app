@@ -4,19 +4,12 @@ const initialState = {
   products: [],
   error: null,
   loading: false,
-  active: null,
   productEdit: null,
   productDelete: null,
 };
 
 export const productReducer = (state = initialState, action) => {
   switch (action.type) {
-    case types.productActive:
-      return {
-        ...state,
-        active: action.payload,
-      };
-
     case types.productNew:
       return {
         ...state,
@@ -45,7 +38,7 @@ export const productReducer = (state = initialState, action) => {
       return {
         ...state,
         products: state.products.filter(
-          (product) => product.id !== state.productDelete
+          (product) => product._id !== state.productDelete
         ),
         productDelete: null,
       };
