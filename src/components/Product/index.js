@@ -30,7 +30,7 @@ const Product = ({ product }) => {
     history.push(`/edit-products/${product._id}`);
   };
   return (
-    <tr>
+    <tr key={_id}>
       <td>{name}</td>
       <td>{quantity}</td>
       <td>${price}</td>
